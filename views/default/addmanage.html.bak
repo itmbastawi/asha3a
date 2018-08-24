@@ -1,0 +1,34 @@
+{{extend 'addpages.html'}}
+<div class="row">
+ 
+<div class='well col-xs-8 col-md-3' id='addm'>
+   <ul><h3>
+       طبيب الاشعة
+       </h3>
+       <li><a href="addoct.html">
+       إضافة
+   </a> </li>
+
+    </ul>
+</div>
+<div class='well col-xs-8 col-md-3' id='addm'>
+    <ul><h3>نوع الفحص </h3>
+       <li><a href="addprod">
+       إضافة
+   </a> </li>
+
+    </ul>
+
+</div>
+<div class='well col-xs-8 col-md-3' id='addm'>
+   <ul><h3>عمليات نقدية </h3>
+       <li><a herf="">
+       إضافةرصيد
+   </a> </li>
+       <li><a herf="">
+      مسحوبات
+   </a> </li>
+    </ul>
+</div>
+      </div>
+    </div>

@@ -1,0 +1,17 @@
+{{extend 'addpages.html'}}
+
+<div class='order'>
+<div class='row'>
+   <div class='col-md-8'>
+       <div class='well'><h2>
+         
+إضافة مصروفات   </h2>
+            </div>
+            
+      
+           {{=form}}
+
+    </div> 
+    
+</div>
+</div>

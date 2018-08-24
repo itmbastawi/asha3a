@@ -1,0 +1,18 @@
+{{extend 'layout.html'}}
+<h1>تقرير المبيعات اليوميه</h1>
+{{=form}}
+{{=t}}
+{{for row in rows:}}
+<br>
+{{=db.doct(row.docname).docname}}
+<br>
+{{pass}}
+<div class='well'>
+    {{=todaysum[0]['_extra']['SUM(orday.totalcost)']}}
+
+    
+</div>
+<div class='well'>
+{{=count[0]['_extra']}}
+    
+</div>

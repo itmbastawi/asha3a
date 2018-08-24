@@ -1,0 +1,55 @@
+{{extend 'addpages.html'}}
+
+<div class='order'>
+<div class='row'>
+   <div class='col-xs-8 col-md-8'>
+       <div class='well print'><h3>
+         
+تقرير عن الفتره   </h3>          
+       </div>
+{{if page==0:}}
+  <div class="col-xs-12 col-md-6">
+
+{{=form}}
+    </div>
+       {{pass}}
+</div>
+
+<div class="row">
+  <div class="col-xs-8 col-md-12">
+
+      
+           <table class="table table-striped">
+               
+          <tr><th>الكود</th><th>اسم العميل</th><th> الطبيب الاشعة</th><th>الطبيب المعالج</th><th>قيمة الفحص</th><th>سعر صبغه</th><th>التكلفه الكليه</th><th></th></tr>
+               {{for row in rows:}}
+            <tr>
+             <td><a href="{{=URL('default','view_order',args=row.id)}}" >{{=row.id}}</td><td><a href="{{=URL('default','view_order',args=row.id)}}" >{{=row.custname}} </td><td><a href="{{=URL('default','view_order',args=row.id)}}" >{{=db.doct(row.docname).docname}} </td>
+             <td><a href="{{=URL('default','view_order',args=row.id)}}" >{{=row.docch}} </td>
+        
+         <td>{{=db.prod(row.prodname).prodcost}} </td> <td>{{=row.sabgha}}</td>
+         <td> {{=row.totalcost}} </td>
+         <td>{{=row.ortime}}  </td>
+        </tr>
+              {{pass}}
+               <tr><td></td><td></td><td></td><td></td><td></td><td>اجمالى التكلفه</td><td>{{=todaysum[0]['_extra']['SUM("orday"."totalcost")'] }}</td></tr>
+     </table>
+
+ {{crows=count[0]['_extra']['COUNT("orday"."totalcost")']}}
+
+اجمالى الاعدد
+( {{=crows}} )
+{{if crows>10:}}
+      
+ {{if page==0:}}
+     {{=A('الصفحة التالية',_class="btn  btn-success",_href=URL(args=page+1))}}
+ {{elif page+1.0>=(crows/10.0):}}   
+       {{=A('الصفحة السابق',_class="btn btn-warning",_href=URL(args=page-1))}}
+ {{else:}}
+     {{=A('الصفحة السابق',_class="btn btn-warning",_href=URL(args=page-1))}}
+     {{=A('الصفحة التالية',_class="btn  btn-success",_href=URL(args=page+1))}}
+    {{pass}}
+{{pass}}
+      
+    </div>
+</div>

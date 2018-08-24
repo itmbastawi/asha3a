@@ -1,0 +1,54 @@
+body{
+
+direction: rtl;
+font:Verdana, Arial, Helvetica, sans-serif; 
+}
+
+.order .row{
+padding: 20px ;
+background-color: #ebebeb;
+margin: 30px auto;
+}
+.order .row img{
+max-height: 180px;
+
+}
+
+
+.title{
+text-align: center;
+}
+.row .view_or{
+font-size: 18px;
+line-height: 40px;
+
+
+}
+.table td{
+text-align: center;
+
+}
+#addm{
+float: right;
+margin:20px 55px 0 0;
+font-size:20px;
+line-height: 35px;
+}
+#groupop{
+ background-color: #ebebeb;   
+ margin: 10px;
+ padding: 10px;
+ border-radius: 15px;
+}
+.headr{
+ background-color: #ebebeb;   
+margin: 10px;
+padding: 20px;
+border-radius: 15px;
+
+}
+.headr img{
+float: left;
+
+
+}

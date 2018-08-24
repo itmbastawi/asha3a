@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="application-name" content="{{=request.application}}">
+    <meta name="google-site-verification" content="">
+      
+      
+    <link rel="stylesheet" href="{{=URL('static','css/page.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/bootstrap-theme.min.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}"/>
+    <link rel="apple-touch-icon" href="{{=URL('static','images/waves.png')}}">
+     <link rel="shortcut icon" href="{{=URL('static','images/waves.png')}}" type="image/png">
+      
+     <title>{{=response.title or request.application}}</title>
+      {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+ </head>
+ <body>
+      <div class="container-fluid">
+     <nav class="navbar navbar-default">
+         
+        <ul class="nav nav-tabs nav-justified">
+           
+          <li id='menu0' role="presentation" ><a href="{{=URL('default','index')}}">الرئيسية</a></li>
+          <li id='menu1' role="presentation"><a href="{{=URL('default','add_daily')}}">العمليات اليومية</a></li>
+          <li id='menu2' role="presentation"><a href="{{=URL('reports','index')}}">التقارير والمراجعه</a></li>
+          <li id='menu3' role="presentation"><a href="{{=URL('default','addmanage')}}" >عمليات إداريه</a></li>
+        </ul>
+     </nav>
+           <div class="flash alert alert-dismissable">{{=response.flash or ''}}</div>
+     </div>
+     
+     <div class="container">
+     
+         
+             
+        
+          {{block center}}
+        {{include}}
+        {{end}}
+         
+         
+     
+     </div>
+     
+     
+     
+     
+     
+     
+     <footer class="footer">
+         <aside class="left">
+          {{=response.logo}}
+         </aside>
+         
+         
+     </footer>
+        <script src="{{=URL('static','js/jquery-2.1.4.min.js')}}"></script>
+        <script src="{{=URL('static','js/app.js')}}"></script>
+        <script src="{{=URL('static','js/jquery.js')}}"></script>
+        <script src="{{=URL('static','js/modernizr-2.8.3.min.js')}}"></script>
+        <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
+
+   </body>
+</html>

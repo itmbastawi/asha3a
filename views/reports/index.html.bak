@@ -1,0 +1,38 @@
+{{extend 'addpages.html'}}
+
+<div class='order'>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <a href="{{=URL('orders')}}" class="thumbnail">
+      <img src="{{=URL('static','images/reports.jpg')}}" alt="...">
+         <h3 class='btn btn-primary btn-lg btn-block'>
+        تقرير عن فترة
+        </h3>
+    </a>
+  </div>
+    
+   <div class="col-xs-12 col-md-6">
+    <a href="{{=URL('doc_report')}}" class="thumbnail">
+      <img src="{{=URL('static','images/doct.jpg')}}" alt="...">
+         <div class='btn btn-primary btn-lg btn-block'>
+            
+       
+         تقرير عن طريق اسم الدكتور
+        </div>
+    </a>
+  </div>
+    
+   <div class="col-xs-12 col-md-6">
+    <a href="{{=URL('view_expe')}}" class="thumbnail">
+      <img src="{{=URL('static','images/expen.jpg')}}" alt="...">
+         <h3 class='btn btn-primary btn-lg btn-block'>
+            
+       
+         تقرير المصروفات
+        </h3>
+    </a>
+  </div>
+</div>
+    
+</div>

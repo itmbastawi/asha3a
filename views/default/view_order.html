@@ -1,0 +1,39 @@
+{{extend 'addpages.html'}}
+
+<div class="row">
+  <div class="col-xs-10 col-md-10">
+ <div class="view_or">
+
+  <h2 class='title'>بيان فحص أشعة</h2>
+
+{{for row in rows:}}
+      رقم  :{{=row.id}}
+<p class='title'>  </p>
+     <table class="table table-striped">
+         <tr> <td> اسم العميل:</td><td>{{=row.custname}}</td><td>  نوع الفحص:</td> <td> {{=db.prod(row.prodname).prodname}} </td></tr>
+        
+         <tr><td> طبيب الاشعة:</td><td>{{=db.doct(row.docname).docname}}</td><td>الطبيب المعالج:</td><td>{{=row.docch}} </td></tr>
+         {{prodcost=db.prod(row.prodname).prodcost}}
+         <tr><td> تكلفة الفحص:</td><td>{{=prodcost}}  </td><td>ملاحظات:</td><td> </td></tr>
+         <tr><td>  تكلفة الصبغة:</td><td>{{=row.sabgha}}</td><td></td><td>{{=row.notes}} </td></tr>
+         <tr><td>التكلفه الاجماليه:</td><td> {{=row.totalcost}} </td></tr>
+         <tr><td></td><td>{{=row.ortime}}</td></tr> 
+         <tr></tr>
+     </table>
+#   {{if row.ortime==request.now:}} 
+ #    {{qrow=(tr_row.tr_date==datetime.date.today)&(tr_row.tr_name=='trday')}}
+  #    {{if db(qrow).select(): }}
+     
+   #  {{db(qrow).update(tr_input=prodcost)}}
+     
+    #  {{else:}}
+
+     #{{tr_row.insert(tr_name='trday',tr_input=prodcost,tr_output=0)}}
+     
+     #{{pass}}
+# {{pass}}
+ </div>
+{{pass}}
+{{=A('تعديل او حذف',_class="btn btn-warning",_href=URL('edit_order',args=row.id))}}
+    </div>
+</div>

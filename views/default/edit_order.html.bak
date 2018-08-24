@@ -1,0 +1,8 @@
+{{extend 'addpages.html'}}
+
+<div class="row">
+  <div class="col-xs-6 col-md-6">
+     
+      {{=forms}}
+    </div>
+</div>

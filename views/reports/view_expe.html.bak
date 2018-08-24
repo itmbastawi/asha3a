@@ -1,0 +1,61 @@
+{{extend 'addpages.html'}}
+
+<div class='order'>
+<div class='row'>
+   <div class='col-xs-8 col-md-8'>
+       <div class='well'><h3>
+         
+المصروفات   </h3>          
+       </div>
+{{if page==0:}}
+  <div class="col-xs-6 col-md-6">
+
+{{=form}}
+    </div>
+       {{pass}}
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+
+        {{for row in rows:}}
+           <table class="table table-striped">
+               
+         <tr><td>  رقم الطلب</td> <td>{{=row.id}}  </td> </tr>
+         <tr></tr>
+         <tr><td> بيان المنصرف </td><td>{{=row.expename}}   </td><td>{{=row.expedate}}</td></tr>
+         <tr></tr>
+         <tr><td> القيمة المنصرف</td><td>{{=row.expemount}} ج </td><td>نوع المنصرف</td><td> {{=db.expety(row.expetype).expetype}} </td></tr>
+
+
+
+         <tr><td> {{=A('تعديل او حذف',_class="btn btn-warning",_href=URL('default','edit_expe',args=row.id))}}</td></tr>
+                  
+
+     </table>
+
+
+ 
+ 
+ </div>  
+        
+       {{pass}}
+
+    
+ {{crows=count[0]['_extra']['COUNT(expe.expemount)']}}
+
+اجمالى الاعدد
+( {{=crows}} )
+{{if crows>10:}}
+      
+ {{if page==0:}}
+     {{=A('الصفحة التالية',_class="btn  btn-success",_href=URL(args=page+1))}}
+ {{elif page+1.0>=(crows/10.0):}}   
+       {{=A('الصفحة السابق',_class="btn btn-warning",_href=URL(args=page-1))}}
+ {{else:}}
+     {{=A('الصفحة السابق',_class="btn btn-warning",_href=URL(args=page-1))}}
+     {{=A('الصفحة التالية',_class="btn  btn-success",_href=URL(args=page+1))}}
+    {{pass}}
+{{pass}}
+    </div>
+</div>

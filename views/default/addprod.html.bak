@@ -1,0 +1,35 @@
+{{extend 'addpages.html'}}
+
+
+<div class='order'>
+<div class='row'>
+   <div class="col-xs-8 col-md-8">
+       <div class='well'><h2>
+         
+إضافة طلب فحص   </h2>          
+       </div>
+       
+           {{=form}}
+
+    </div> 
+    
+</div>
+</div>
+
+<div class='row'>
+     <div class="col-xs-8 col-md-8">
+
+           <table class="table table-striped">
+               
+          <tr><th>الكود</th><th>نوع الفحص</th><th> تكلفة الفحص</th></tr>
+               {{for row in rows:}}
+            <tr>
+             <td>{{=row.id}}</td><td>{{=row.prodname}} </td><td>{{=row.prodcost}} </td>
+                <td><a href="{{=URL('edit_prod',args=row.id)}}">تعديل او حذف</a></td>
+            </tr>
+              {{pass}}
+     </table>
+
+    
+</div>
+</div>

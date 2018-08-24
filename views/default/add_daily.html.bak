@@ -1,0 +1,29 @@
+{{extend 'addpages.html'}}
+<div class='order'>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <a href="{{=URL('add_orday')}}" class="thumbnail">
+      <img src="{{=URL('static','images/prod.jpg')}}" alt="...">
+         <div class='btn btn-primary btn-lg'>
+            اضافة طلب فحص
+        </div>
+    </a>
+  </div>
+    
+   <div class="col-xs-12 col-md-6">
+    <a href="{{=URL('add_expe')}}" class="thumbnail">
+      <img src="{{=URL('static','images/expen.jpg')}}" alt="...">
+         <h3 class='btn btn-primary btn-lg btn-block'>
+            
+       
+          اضافة مصروفات
+        </h3>
+    </a>
+  </div>
+ 
+
+  
+</div>
+    
+</div>

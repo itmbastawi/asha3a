@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+db.define_table('doct',
+                Field('docname','string',label='دكتور الاشعة'))
+
+db.define_table('prod',
+                Field('prodname','string',label='الفحص'),
+               Field('prodcost','integer',label='تكلفة الفحص'))
+
+db.define_table('orday',
+                Field('custname','string',label='اسم العميل'),
+                Field('docname','reference doct'))
